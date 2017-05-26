@@ -1,0 +1,529 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, "Hiragino Sans GB",
+    "Microsoft YaHei", "SimSun", Arial, Sans-serif;
+    background: #FFFFFF;
+    min-height: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+.container .row .banners {
+    width: 90%;
+    overflow: hidden;
+    z-index: 1000;
+    height: 350px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.carousel {
+    width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.carousel .item img {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    border-radius: 3px;
+}
+
+.prev {
+    position: absolute;
+    top: 43%;
+    left: 1%;
+}
+
+.next {
+    position: absolute;
+    top: 43%;
+    left: 97%;
+}
+
+.container .row .main-content {
+    width: 90%;
+    height: 100%;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.container .row .main-content .left-content {
+    padding-left: 0;
+    padding-right: 0;
+    margin-top: 20px;
+}
+
+.container .row .main-content .left-content .on-pc {
+    display: block;
+}
+
+.container .row .main-content .left-content .on-phone {
+    display: none;
+}
+
+.container .row .main-content .left-content .category {
+    width: 100%;
+    border-radius: 3px;
+}
+
+.container .row .main-content .left-content .category .items {
+    margin: 5px auto;
+}
+
+.category .items .item {
+    min-height: 34px;
+    background-color: #f7f7f7;
+    border: 1px solid #dcdcdc;
+    display: inline-block;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    margin: 0 34px 18px 0;
+    overflow: hidden;
+    vertical-align: top;
+    text-decoration: none;
+}
+
+.category .items .item img {
+    width: 34px;
+    height: 34px;
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+.category .items .item .type-name {
+    display: inline-block;
+    font-size: 16px;
+    padding: 1px 11px 0 6px;
+    color: #252F39;
+    line-height: 29px;
+}
+
+.container .row .main-content .left-content .recomment-line {
+    position: relative;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.container .row .main-content .left-content .recomment-line .recomment-for-you {
+    color: #999;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.container .row .main-content .left-content .recomment-line:after,
+.container .row .main-content .left-content .recomment-line:before {
+    display: block;
+    position: absolute;
+    top: 30px;
+    width: 44%;
+    content: "";
+    border-top: 1px solid #ededed;
+}
+
+.container .row .main-content .left-content .recomment-line:before {
+    left: 0;
+}
+
+.container .row .main-content .left-content .recomment-line:after {
+    right: 0;
+}
+
+.container .row .main-content .left-content .goods {
+    height: 100%;
+    overflow: hidden;
+}
+
+.container .row .main-content .left-content .goods .items {
+    list-style: none;
+}
+
+.container .row .main-content .left-content .goods .items .item:hover {
+    background-color: #F2F2F5;
+}
+
+.container .row .main-content .left-content .goods .items .item {
+    width: 22%;
+    display: inline-block;
+    position: relative;
+    margin-right: 26px;
+    margin-bottom: 17px;
+}
+
+.container .row .main-content .left-content .goods .items .item .good-picture {
+    width: 100%;
+    overflow: hidden;
+    border-radius: 4px;
+    height: 210px;
+}
+
+.container .row .main-content .left-content .goods .items .item .good-info {
+    margin-top: 5px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.container .row .main-content .left-content .goods .items .item .good-info .good-price:before {
+    content: "¥";
+}
+
+.container .row .main-content .left-content .goods .items .item .good-info .good-price {
+    width: 57px;
+    height: 30px;
+    background: #DE5B49;
+    color: #fff;
+    line-height: 30px;
+    text-align: center;
+    font-size: 16px;
+    position: absolute;
+    top: 2%;
+    left: 73%;
+}
+
+.container .row .main-content .left-content .goods .items .item .good-info .good-name {
+    text-align: center;
+}
+
+.container .row .main-content .left-content .goods .items .item .good-info .good-name a {
+    color: #2CC185;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.container .row .main-content .left-content .goods .items .item .good-info .good-place {
+    width: 50%;
+    float: left;
+    height: 30px;
+    line-height: 30px;
+}
+
+.container .row .main-content .left-content .goods .items .item .good-info .good-place span {
+    font-size: 16px;
+}
+
+.container .row .main-content .left-content .goods .items .item .good-info .bargain {
+    width: 50%;
+    float: left;
+    text-align: right;
+}
+
+.container .row .main-content .left-content .goods .items .item .good-info .bargain span {
+    font-size: 18px;
+    color: #DE5B49;
+}
+
+.container .row .main-content .left-content .load-more {
+    position: relative;
+    text-align: center;
+    padding: 14px 0;
+}
+
+.container .row .main-content .left-content .load-more a {
+    display: inline-block;
+    font-size: 16px;
+    color: #999;
+    width: 40%;
+    background-color: #F7F7F7;
+    text-decoration: none;
+    height: 34px;
+    line-height: 34px;
+}
+
+.container .row .main-content .left-content .load-more a:hover {
+    background-color: #F7F7FF;
+}
+
+.container .row .main-content .left-content .load-more:after,
+.container .row .main-content .left-content .load-more:before {
+    display: block;
+    position: absolute;
+    top: 30px;
+    width: 25%;
+    content: "";
+    border-top: 1px solid #ededed;
+}
+
+.container .row .main-content .left-content .load-more:before {
+    left: 0;
+}
+
+.container .row .main-content .left-content .load-more:after {
+    right: 0;
+}
+
+.container .row .main-content .right-content {
+    height: 100%;
+    overflow: hidden;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.container .row .main-content .right-content .helped {
+    background-image: url("../image/help.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 214px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.container .row .main-content .right-content .helped .helpers {
+    line-height: 205px;
+    vertical-align: middle;
+    font-size: 3.23em;
+    font-family: impact;
+    color: #4bc0a5;
+}
+
+.container .row .main-content .right-content .location {
+    background-image: url("../image/location.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    min-height: 214px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 88px;
+}
+
+.container .row .main-content .right-content .location span {
+    color: #F75450;
+    font-size: 13px;
+    border-bottom: 2px solid;
+}
+
+.container .row .main-content .right-content .location a {
+    background: #FFFFFF;
+    border-color: #F75450;
+    color: #F75450;
+    margin-top: 20px;
+}
+
+.container .row .main-content .right-content .location a:hover {
+    background: #F75450;
+    color: #FFFFFF;
+}
+
+.right-content .sina-wechat {
+    text-align: center;
+}
+
+.right-content .sina-wechat a {
+    margin-right: 5px;
+    text-decoration: none;
+}
+
+.right-content .recomment {
+    margin: 20px auto;
+    text-align: center;
+    font-size: 13px;
+    width: 79%;
+}
+
+.recomment .title {
+    text-align: left;
+}
+
+.recomment .title span {
+    font-size: 14px;
+    color: #969696;
+}
+
+.recomment .list {
+    margin: 0 0 20px;
+    text-align: left;
+    list-style: none;
+    height: 100%;
+    overflow: hidden;
+}
+
+.recomment .list li{
+    border-bottom: 1px solid #dddddd;
+}
+
+.recomment .list .avatar {
+    float: left;
+    width: 48px;
+    height: 48px;
+    margin-top: 10px;
+}
+
+.recomment .list .name {
+    padding-top: 11px;
+    font-weight: 600;
+    text-align: left;
+    display: block;
+    padding-left: 53px;
+    width: 100%;
+    color: #333333;
+    text-decoration: none;
+}
+
+.recomment .list p{
+    margin-top: 3px;
+    font-size:12px;
+    color:#969696;
+    padding-top: 7px;
+    padding-left: 53px;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #dddddd;
+    border-radius: 50%;
+}
+
+.to_top{
+    height: 55px;
+    width: 55px;
+    cursor: pointer;
+    background: url("../image/top.jpg") no-repeat center;
+    position: fixed;
+    right: 4%;
+    bottom: 4%;
+    display: none;
+    z-index: 999999;
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 668px) {
+    .next {
+        left: 90%;
+        top: 38%;
+    }
+
+    .prev {
+        top: 38%;
+        left: 4%;
+    }
+
+    .carousel {
+        width: 100%;
+    }
+
+    .carousel .item img {
+        height: 130px;
+    }
+
+    .carousel-indicators {
+        bottom: 0%;
+    }
+
+    .carousel-indicators li,
+    .carousel-indicators .active {
+        width: 8px;
+        height: 8px;
+    }
+
+    .container .row .main-content {
+        width: 100%;
+    }
+
+    .container .row .main-content .left-content {
+        margin-top: 5px;
+    }
+
+    .container .row .main-content .left-content .on-pc {
+        display: none;
+    }
+
+    .container .row .main-content .left-content .on-phone {
+        display: block;
+    }
+
+    .container .row .main-content .left-content .recomment-line:after,
+    .container .row .main-content .left-content .recomment-line:before {
+        width: 35%;
+    }
+
+    .container .row .main-content .left-content .goods .items {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .container .row .main-content .left-content .goods .items .item:nth-child(odd) {
+        margin-left: 10px;
+    }
+
+    .container .row .main-content .left-content .goods .items .item:nth-child(even) {
+        float: right;
+        margin-right: 10px;
+    }
+
+    .container .row .main-content .left-content .goods .items .item {
+        width: 43%;
+        margin-right: 0;
+    }
+
+    .container .row .main-content .left-content .goods .items .item a .good-picture {
+        height: 186px;
+        width: 100%;
+    }
+
+    .container .row .main-content .left-content .goods .items .item .good-info .good-price {
+        width: 47px;
+        left: 68%;
+    }
+
+    .container .row .main-content .right-content .location {
+        width: 50%;
+        float: left;
+    }
+
+    .container .row .main-content .right-content .helped {
+        width: 50%;
+        float: right;
+        background-position: center;
+    }
+
+    .right-content .sina-wechat {
+        display: block;
+    }
+
+    .to_top{
+        display: none;
+    }
+
+}
+
+/*手机上的分类选择*/
+.on-phone .beans {
+    width: 100%;
+    background: #2CC185;
+}
+
+.on-phone .beans .bean {
+    text-align: center;
+    width: 25%;
+    display: inline-block;
+    margin: 5px 0px 5px 0px;
+}
+
+.bean .type-name a {
+    font-size: 13px;
+    color: #F7FAFC;
+}
+
+
+
+

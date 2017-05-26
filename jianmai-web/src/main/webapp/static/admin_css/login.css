@@ -1,0 +1,71 @@
+@CHARSET "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	font-family: Fira Code, Iosevka, 'Segoe UI', Tahoma, Geneva, Verdana,
+		sans-serif;
+	background: #FFFFFF;
+	min-height: 100%;
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+
+.bgimg {
+	position: fixed;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	z-index: 1002;
+	left: 0px;
+}
+
+ .mask {
+     position: fixed;
+     top: 0px;
+     right: 0px;
+     bottom: 0px;
+     filter: alpha(opacity=60);
+     z-index: 1002;
+     left: 0px;
+     background-color: rgba(0, 0, 0, .3);
+     overflow: scroll;
+ }
+ 
+ .mask .mask-content{
+ 	overflow: hidden;
+ 	margin-top: 170px;
+ }
+ 
+ .mask-content .admin-login{
+ 	width: 70%;
+ 	margin: 10px auto;
+ }
+ 
+ .admin-login .login-title{
+ 	text-align: center;
+ }
+ 
+ .login-title h4{
+ 	color: #DE5B49;
+ }
+ 
+.login-form input{
+	text-align: center;
+	color:#666666;
+}
+
+.login-form input:FOCUS {
+	border-color:#DE5B49;
+}

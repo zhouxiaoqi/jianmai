@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.zhouqifun.mapper.UserInfoDao">
+    <resultMap type="UserInfo" id="UserInfoMap">
+        <id property="u_id" column="u_id"/>
+        <result property="u_phonenum" column="u_phonenum"/>
+        <result property="u_qq" column="u_qq"/>
+        <result property="u_headerpic" column="u_headerpic"/>
+        <association property="account" javaType="Account">
+            <id property="a_id" column="a_id"/>
+            <result property="nickname" column="a_nickname"/>
+            <result property="email" column="a_email"/>
+            <result property="password" column="a_password"/>
+        </association>
+    </resultMap>
+
+    <!--根据id得到我的个人信息-->
+    <select id="getForUserInfoById" resultMap="UserInfoMap">
+		select u.*,a.a_id,a.a_nickname,a.a_email
+		from t_account as a,t_userinfo as u
+		where a.a_id = u.account_id and u.account_id = #{a_id}
+	</select>
+
+    <!--根据id修改用户个人信息-->
+    <update id="updateForUserInfoById">
+        UPDATE t_userinfo as u,t_account as a
+        set a.a_nickname = #{my_nickname},u.u_phonenum = #{my_phonenum},u.u_qq = #{my_qq}
+        WHERE u.account_id = #{a_id} and a.a_id = #{a_id}
+    </update>
+
+    <!--根据id修改用户个人头像-->
+    <update id="updateForUserHeaderpic">
+        UPDATE t_userinfo as u
+        set u.u_headerpic = #{filepath}
+        where u.account_id = #{a_id};
+    </update>
+
+    <select id="getForOtherUserInfo" resultMap="UserInfoMap">
+        select a.a_id, u.u_headerpic,a.a_nickname
+        from t_account as a
+        left join t_userinfo as u
+        on a.a_id = u.account_id
+        where a.a_id = #{a_id}
+    </select>
+
+</mapper>

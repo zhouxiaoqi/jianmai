@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.zhouqifun.mapper.AdversDao">
+    <resultMap id="AdversMap" type="Advers">
+        <id property="ad_id" column="ad_id"></id>
+        <result property="ad_image" column="ad_image"></result>
+        <result property="ad_desc" column="ad_desc"></result>
+        <result property="ad_position" column="ad_position"></result>
+    </resultMap>
+
+    <select id="getForAllAdvers" resultMap="AdversMap">
+		SELECT *
+		FROM t_adver
+	</select>
+
+</mapper>

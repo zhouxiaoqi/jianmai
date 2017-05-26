@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.zhouqifun.mapper.TypeDao">
+    <resultMap id="TypeMap" type="Type">
+        <id property="t_id" column="t_id"></id>
+        <result property="t_typename" column="t_typename"></result>
+        <result property="t_typeimgforpc" column="t_typeimgforpc"></result>
+        <result property="t_typeimgforphone" column="t_typeimgforphone"></result>
+        <result property="t_typedesc" column="t_typedesc"></result>
+    </resultMap>
+
+    <select id="get_AllType" resultMap="TypeMap">
+		SELECT t_id,t_typename,t_typeimgforpc,t_typeimgforphone
+		FROM t_type
+		WHERE showornot = 1;
+	</select>
+
+    <select id="get_TypeInfoByTid" resultMap="TypeMap">
+		SELECT *
+		FROM t_type
+		WHERE t_id = #{t_id} AND showornot = 1
+	</select>
+
+</mapper>
+
+

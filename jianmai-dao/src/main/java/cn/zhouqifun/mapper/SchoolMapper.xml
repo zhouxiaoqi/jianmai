@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.zhouqifun.mapper.SchoolDao">
+    <resultMap id="SchoolMap" type="School">
+        <id property="s_id" column="s_id"/>
+        <result property="s_name" column="s_name"/>
+        <result property="s_badge" column="s_badge"/>
+        <result property="s_address" column="s_address"></result>
+        <result property="s_campus" column="s_campus"></result>
+    </resultMap>
+
+    <!--取出所有学校列表-->
+    <select id="getAllForSchool" resultMap="SchoolMap">
+        SELECT *
+        from t_school
+        WHERE showornot = 1
+    </select>
+
+    <!--用户选择一个学校，根据学校id取出详细信息-->
+    <select id="getForChooseSchoolById" resultMap="SchoolMap">
+        SELECT s_id,s_name
+        from t_school
+        where s_id = #{s_id}
+    </select>
+
+</mapper>

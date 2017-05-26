@@ -1,0 +1,21 @@
+#updatepass{
+    width: 100%;
+}
+
+#updatepass h4{
+    text-align: center;
+    color: #5CAA4B;
+}
+
+#updatepass .update-form{
+    width: 30%;
+    margin: 0 auto;
+}
+
+.update-form label{
+    display: block;
+}
+
+.update-form .form-control{
+    border-radius: 0px;
+}

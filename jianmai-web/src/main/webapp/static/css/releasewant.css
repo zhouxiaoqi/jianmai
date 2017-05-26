@@ -1,0 +1,99 @@
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	font-family: 'Helvetica Neue', Helvetica, "Hiragino Sans GB",
+		"Microsoft YaHei", "SimSun", Arial, Sans-serif;
+	background: #E3EEEC;
+	min-height: 100%;
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+
+.releasewant-title {
+	height: 100%;
+	overflow: hidden;
+	clear: both;
+	margin-top: 15px;
+}
+
+.releasewant-title .releasewant-logo, .releasewant-title .line,
+	.releasewant-title .releasewant-word {
+	text-align: center;
+}
+
+.releasewant-form {
+	margin-top: 20px;
+	overflow: hidden;
+	margin-bottom: 20px;
+	height: 100%;
+}
+
+.releasewant-form .form-div {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.mb {
+	margin-bottom: 20px;
+}
+
+.form-key {
+	text-align: center;
+	margin-bottom: 3px;
+}
+
+.form-key span {
+	color: #666666;
+	font-size: 18px;
+}
+
+.form-value {
+	text-align: center;
+}
+
+.form-value input {
+	width: 100%;
+	height: 40px;
+	border: 1px solid #25AE88;
+	font-size: 16px;
+	border-radius: 4px;
+	padding-left: 5px;
+}
+
+.form-value input:focus, .form-value textarea:focus {
+	border: 1px solid #DE5B49;
+}
+
+.form-value textarea {
+	width: 100%;
+	resize: none;
+	border: 1px solid #25AE88;
+	font-size: 16px;
+	border-radius: 4px;
+	padding-left: 5px;
+	padding-top: 4px;
+}
+
+.submit-btn {
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+.submit-btn button {
+	width: 40%;
+	border-bottom-left-radius: 30px;
+	border-top-left-radius: 30px;
+	border-bottom-right-radius: 30px;
+	border-top-right-radius: 30px;
+}

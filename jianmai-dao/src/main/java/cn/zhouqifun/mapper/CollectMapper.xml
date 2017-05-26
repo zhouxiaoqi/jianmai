@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.zhouqifun.mapper.CollectDao">
+    <resultMap id="CollectMap" type="Collect">
+        <id property="c_id" column="c_id"/>
+        <association property="account" javaType="Account">
+            <id property="a_id" column="a_id"/>
+        </association>
+        <association property="goods" javaType="Goods">
+            <id property="g_id" column="g_id"></id>
+            <result property="g_name" column="g_name"></result>
+            <result property="g_desc" column="g_desc"></result>
+            <result property="g_showornot" column="g_showornot"></result>
+            <result property="g_picture1" column="g_picture1"></result>
+            <result property="g_picture2" column="g_picture2"></result>
+            <result property="g_picture3" column="g_picture3"></result>
+            <result property="g_picture4" column="g_picture4"></result>
+        </association>
+    </resultMap>
+
+    <select id="getForCollectById" resultMap="CollectMap">
+		SELECT *
+		FROM t_collect
+		WHERE goods_id = #{g_id} and account_id = #{a_id}
+	</select>
+
+    <select id="getMyCollectByAid" resultMap="CollectMap">
+        SELECT c.c_id,g.g_id,g.g_name,g.g_desc,g.g_picture1,g.g_picture2,g.g_picture3,g.g_picture4,g.g_showornot
+        FROM t_goods as g,t_account as a,t_collect as c
+        WHERE g.g_id = c.goods_id and a.a_id = #{a_id}
+    </select>
+
+    <insert id="insertForCollect">
+		INSERT
+		INTO t_collect(c_id,goods_id,account_id)
+		VALUE(NULL ,#{g_id},#{a_id})
+	</insert>
+
+    <delete id="deleteForCollect">
+		DELETE
+		from t_collect
+		WHERE goods_id = #{g_id} and account_id = #{a_id}
+	</delete>
+
+</mapper>

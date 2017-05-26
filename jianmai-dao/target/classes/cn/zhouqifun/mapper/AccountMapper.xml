@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.zhouqifun.mapper.AccountDao">
+	<resultMap id="AccountMap" type="Account">
+		<id property="a_id" column="a_id" />
+		<result property="nickname" column="a_nickname" />
+		<result property="email" column="a_email" />
+		<result property="password" column="a_password" />
+	</resultMap>
+
+
+
+	<!-- 验证邮箱是否可用 -->
+	<select id="getForValidateEmail" resultType="String">
+		SELECT a_email
+		FROM
+		t_account
+		WHERE a_email = #{email}
+	</select>
+
+	<!--注册 并返回插入的值 -->
+	<insert id="insertForRegist" parameterType="Account"
+		useGeneratedKeys="true" keyProperty="a_id">
+		INSERT
+		INTO
+		t_account(a_id,a_nickname,a_email,a_password,created_time)
+		VALUE 
+		(NULL,#{nickname},#{email},md5(#{password}),now())
+	</insert>
+	
+	
+	<!-- 登陆 -->
+	<select id="getForLogin" resultMap="AccountMap">
+		select a_id,a_nickname
+		from t_account
+		where a_email = #{email} and a_password = md5(#{password})
+	</select>
+
+	<update id="updateForpassword" parameterType="Account">
+		UPDATE t_account
+		SET a_password = md5(#{password})
+		WHERE a_email = #{email}
+	</update>
+
+</mapper>
+

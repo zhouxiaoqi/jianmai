@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.zhouqifun.mapper.AppDao">
+    <resultMap id="GoodsMap" type="Goods">
+        <id property="g_id" column="g_id"></id>
+        <result property="g_name" column="g_name"></result>
+        <result property="g_desc" column="g_desc"></result>
+        <result property="g_place" column="g_place"></result>
+        <result property="g_price" column="g_price"></result>
+        <result property="g_bargain" column="g_bargain"></result>
+        <result property="g_phonenum" column="g_phonenum"></result>
+        <result property="g_qq" column="g_qq"></result>
+        <result property="g_showornot" column="g_showornot"></result>
+        <result property="g_rejectreason" column="g_rejectreason"></result>
+        <result property="g_createdTime" column="g_createdtime"></result>
+        <result property="g_picture1" column="g_picture1"></result>
+        <result property="g_picture2" column="g_picture2"></result>
+        <result property="g_picture3" column="g_picture3"></result>
+        <result property="g_picture4" column="g_picture4"></result>
+        <result property="brownTimes" column="brownTimes"></result>
+        <association property="account" javaType="Account">
+            <id property="a_id" column="a_id"/>
+            <result property="nickname" column="a_nickname"/>
+            <result property="email" column="a_email"/>
+            <result property="password" column="a_password"/>
+        </association>
+        <association property="school" javaType="School">
+            <id property="s_id" column="s_id"></id>
+            <result property="s_name" column="s_name"></result>
+        </association>
+        <association property="type" javaType="Type">
+            <id property="t_id" column="t_id"></id>
+            <result property="t_typename" column="t_typename"></result>
+            <result property="t_typeimgforpc" column="t_typeimgforpc"></result>
+            <result property="t_typedesc" column="t_typedesc"></result>
+        </association>
+    </resultMap>
+
+
+    <select id="getAllGoods" resultMap="GoodsMap">
+        SELECT g.g_id,g.g_name,g.g_picture1,g.g_price,g.g_place
+        from t_goods as g
+        where g.g_showornot = 1
+        limit 0,50
+    </select>
+</mapper>

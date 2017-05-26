@@ -1,0 +1,142 @@
+@CHARSET "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	height: 100%;
+}
+
+body {
+	font-family: Fira Code, Iosevka, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	background: #FFFFFF;
+	min-height: 100%;
+	position: relative;
+	margin: 0;
+	padding: 0;
+}
+
+.user-search{
+	margin-bottom: 30px;
+	padding-left: 35%;
+}
+
+.user-search input{
+	float:left;
+	width: 30%;
+	color: #252F39;
+}
+
+.user-search input:FOCUS{
+	border-color:#22CC77;
+}
+
+.user-search button{
+	line-height: 27px;
+	margin-left: 10px;
+}
+
+#users{
+	height: 100%;
+	overflow: hidden;
+	clear: both;
+}
+
+#users .item{
+	width: 19%;
+	border:1px solid #D7D7D7;
+	height: 100%;
+	overflow: hidden;
+	float: left;
+	padding-bottom: 10px;
+	padding-top:10px;
+	border-radius: 5px;
+	/* margin-right: 4%;
+	margin-left: 2%; */
+	margin:0 4% 20px 2%;
+}
+
+.item .user-pic{
+	width: 105px;
+	height: 105px;
+	margin:0 auto;
+}
+
+.item .user-pic img{
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	border: 3px solid #4BC0A5;
+}
+
+.item .user-account{
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+.item .user-nickname{
+	text-align: center;
+}
+.item .user-nickname span{
+	color:#F57A00;
+}
+
+.item .user-phonenum,
+.item .user-qq,
+.item .operation{
+	text-align: center;
+	margin-top: 5px;
+}
+
+.reason-mask {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    filter: alpha(opacity=90);
+    z-index: 1002;
+    left: 0px;
+    background-color: rgba(0, 0, 0, .2);
+    overflow: scroll;
+}
+.reason-mask .mask-content{
+	width: 35%;
+	margin:30px auto;
+	border: 1px solid #D7D7D7;
+	background: #fff;
+	border-radius: 5px;
+}
+
+.mask-content .mask-title{
+	text-align: center;
+	margin: 5px 0px 15px 0px;
+	padding-bottom:10px;
+	border-bottom: 1px solid #D7D7D7;
+}
+
+.mask-content .mask-body{
+	text-align: left;
+	margin: 0px 0px 15px 0px;
+	border-bottom: 1px solid #D7D7D7;
+	padding-bottom: 10px;
+}
+
+.mask-content .mask-body ul li{
+	list-style: none;
+	line-height: 30px;
+}
+
+.mask-body ul li textarea {
+	resize: none;
+	width: 334px;
+}
+
+.mask-content .mask-footer{
+	margin:0px 0px 15px 0px;
+	text-align: center;
+}

@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, "Hiragino Sans GB", "Microsoft YaHei", "SimSun", Arial, Sans-serif;
+    background: #F7FAFC;
+    min-height: 100%;
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.head,
+.release-picture {
+    height: 100%;
+    overflow: hidden;
+    clear: both;
+    margin-top: 20px;
+}
+
+.logo .logo-img {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    text-align: center;
+}
+
+.logo .line {
+    text-align: center;
+}
+
+.logo .logo-title {
+    text-align: center;
+    font-size: 2.0em;
+    color: #2C3E50;
+    font-weight: 500;
+}
+
+.picture-area {
+    background: #F6F9F9;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: 100%;
+    overflow: auto;
+    clear: both;
+}
+
+.picture-area .picture-one,
+.picture-area .picture-two,
+.picture-area .picture-three,
+.picture-area .picture-four {
+    width: 20%;
+    height: 130px;
+    text-align: center;
+    margin: 0 auto;
+    cursor: pointer;
+    float: left;
+    margin-left: 4%;
+}
+
+.picture-area i {
+    padding-top: 28px;
+    color: #25AE88;
+    font-size: 5.0em;
+}
+
+.picture-area img {
+    width: 100%;
+    height: 130px;
+    overflow: hidden;
+}
+
+.release-form {
+    margin-top: 10px;
+    height: 100%;
+    overflow: hidden;
+    clear: both;
+}
+
+.release-form .form-area {
+    background: #FFFFFF;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+}
+
+.goods-title,
+.goods-desc,
+.goods-place,
+.goods-price,
+.goods-bargain,
+.goods-type,
+.telnum,
+.qq {
+    text-align: center;
+    margin-bottom: 15px;
+    display: inline;
+}
+
+.form-key {
+    line-height: 2.5em;
+}
+
+.form-key span {
+    font-size: 18px;
+}
+
+.form-value {
+    padding-bottom: 10px;
+}
+
+.form-value input,
+.form-value select {
+    width: 80%;
+    padding-left: 8px;
+    height: 40px;
+    border: 1px solid;
+    border-color: #00E5C1;
+    border-radius: 4px;
+    background-color: #F6F9F9;
+}
+
+.form-value select {
+    padding: 0px 0px 0px 15%;
+    width: 40%;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+.form-value textarea {
+    width: 80%;
+    padding-left: 8px;
+    padding-right: 5px;
+    padding-top: 5px;
+    border: 1px solid;
+    border-color: #00E5C1;
+    border-radius: 4px;
+    background-color: transparent;
+    resize: none;
+    background-color: #F6F9F9;
+}
+
+.form-value input:focus,
+.form-value textarea:focus,
+.form-value select:focus {
+    border-color: #F57A00;
+}
+
+.goods-type {
+    border-bottom: 1px solid red;
+}
+
+
+.contact-tip span {
+    color: #666666;
+    font-size: 16px;
+}
+
+.contact-tip span small {
+    color: #929292;
+}
+
+.agree-rule {
+    width: 30%;
+    text-align: center;
+    margin: 0 auto;
+    height: 30px;
+}
+
+.agree-rule label {
+    display: table;
+}
+
+.agree-rule input,
+.agree-rule span {
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 16px;
+    line-height: 30px;
+}
+
+.submit-btn {
+    text-align: center;
+}
+
+.submit-btn button {
+    width: 40%;
+    border-bottom-left-radius: 30px;
+    border-top-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+#canvas-area {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+#canvas-area canvas {
+    display: block;
+}
+
+.modal-title {
+    text-align: center;
+}
+
+.rules li {
+    margin-left: 10px;
+    text-align: center;
+}
+
+@media screen and (min-width: 320px) and (max-width: 668px) {
+    .picture-area .picture-one,
+    .picture-area .picture-two,
+    .picture-area .picture-three,
+    .picture-area .picture-four {
+        height: 70px;
+    }
+    .picture-area i {
+        padding-top: 9px;
+        color: #25AE88;
+        font-size: 3.0em;
+    }
+
+    .picture-area img {
+        width: 100%;
+        height: 92px;
+        overflow: hidden;
+    }
+
+    .agree-rule {
+        height: 53px;
+        width: 36%;
+    }
+
+    #canvas-area {
+        display: none;
+    }
+}

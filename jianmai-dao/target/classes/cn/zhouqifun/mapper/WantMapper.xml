@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.zhouqifun.mapper.WantDao">
+    <resultMap id="WantMap" type="Want">
+        <id property="w_id" column="w_id"></id>
+        <result property="w_name" column="w_name"></result>
+        <result property="w_desc" column="w_desc"></result>
+        <result property="w_price" column="w_price"></result>
+        <result property="w_place" column="w_place"></result>
+        <result property="w_phonenum" column="w_phonenum"></result>
+        <result property="w_qq" column="w_qq"></result>
+        <result property="w_showornot" column="w_showornot"></result>
+        <result property="w_createdtime" column="w_createdtime"></result>
+        <result property="w_rejectreason" column="w_rejectreason"></result>
+        <association property="school" javaType="School">
+            <id property="s_id" column="s_id"></id>
+            <id property="s_badge" column="s_badge"></id>
+        </association>
+        <association property="account" javaType="Account">
+            <id property="a_id" column="a_id"></id>
+            <result property="nickname" column="a_nickname"></result>
+        </association>
+    </resultMap>
+
+    <insert id="insertForWantGoods" parameterType="Want">
+		INSERT
+		INTO t_want(w_id,w_name,w_desc,w_price,w_place,w_phonenum,w_qq,w_showornot,school_id,account_id,w_createdtime)
+		VALUE (NULL ,#{w_name},#{w_desc},#{w_price},#{w_place},#{w_phonenum},#{w_qq},0,#{school.s_id},#{account.a_id},now())
+	</insert>
+
+    <select id="getForMyWantGoods" resultMap="WantMap">
+        SELECT w_id,w_name,w_desc,w_price,w_place,w_showornot,w_rejectreason
+        FROM t_want
+        WHERE account_id = #{a_id}
+    </select>
+
+    <update id="updateForReGroundingWant">
+        UPDATE t_want
+        SET w_showornot = #{state}
+        WHERE w_id = #{w_id}
+    </update>
+
+    <select id="getForWantGoodsByWid" resultMap="WantMap">
+        SELECT w_id,w_name,w_desc,w_price,w_place,w_phonenum,w_qq,a_id
+        FROM t_want
+        LEFT JOIN t_account
+        ON account_id = a_id
+        WHERE w_id = #{w_id} AND w_showornot = 1
+    </select>
+
+    <update id="updateForWantGoods" parameterType="Want">
+        UPDATE t_want
+        set w_name = #{w_name},w_desc = #{w_desc},w_price = #{w_price},
+        w_place = #{w_place},w_phonenum = #{w_phonenum},w_qq = #{w_qq},w_showornot = 0
+        WHERE w_id = #{w_id}
+    </update>
+
+    <select id="getForAtSchoolGoods" resultMap="WantMap">
+        select w.w_id,w.w_name,w.w_desc,w.w_price,w.w_place,w.w_createdtime,w.w_phonenum,w.w_qq,a.a_id,a.a_nickname,s.s_badge
+        from(t_want as w left join t_account as a on w.account_id = a.a_id)
+        left join t_school as s
+        on w.school_id = s.s_id
+        where w.school_id = #{s_id}
+    </select>
+
+</mapper>

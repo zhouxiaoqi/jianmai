@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.zhouqifun.search.mapper.GoodsMapper">
+
+    <select id="getItemList" resultType="cn.zhouqifun.search.pojo.SearchGoods">
+        select g_id, g_picture1,g.g_name,g.g_place,g.g_price,g.g_bargain
+        from t_goods as g
+        where g.g_showornot = 1
+    </select>
+</mapper>
